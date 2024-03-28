@@ -1,0 +1,2268 @@
+hello all my name is krishnaik and
+
+welcome to my YouTube channel so guys in
+
+this video we are going to discuss about
+
+ml flow now if you don't know about ml
+
+flow it is an open source platform for
+
+managing the entire machine learning uh
+
+project itself with respect to the life
+
+cycle uh here I'm probably going to
+
+discuss a lot of things I'll be taking a
+
+specific examples we'll be able to see
+
+that how with the help of ml flow you'll
+
+be able to perform various experiments
+
+you'll be able to track them and even
+
+for model evaluation and selecting the
+
+right kind of model based on the
+
+accuracy based on various parameters how
+
+you can log that everything we'll be
+
+discussing over here and I will also
+
+take an example of a remote server which
+
+is called as dagsub and see it is
+
+possible that is this ml flow entirely
+
+is an open source platform right so you
+
+can integrate this probably in AWS stage
+
+maker in AWS ec2 instance or in any
+
+remote server right so we'll discuss
+
+like where all you will be able to
+
+integrate it right now one remote server
+
+that I'm probably going to take is
+
+something called as dagsub will also
+
+understand about that so if you're quite
+
+excited and you really want to
+
+understand that how you can manage your
+
+entire machine learning life cycle of
+
+the project this video will definitely
+
+be there and ml flow is right now
+
+becoming really really popular you don't
+
+have to probably have a separate devops
+
+work in this right automatically it will
+
+be taken care of so let me go ahead and
+
+share my screen and let me explain about
+
+that okay so this is the ml flow I've
+
+made this particular tutorial two years
+
+back but now there are a lot of changes
+
+that are specifically come so that is
+
+the reason why I'm specifically making
+
+this particular video uh this will be a
+
+long video at least for 30 minutes I
+
+guess let's see uh how much it will go
+
+ahead with right so first of all a basic
+
+definition an open source platform for
+
+machine learning life cycle uh we will
+
+be able to work with any ml Library
+
+language an existing code you can run
+
+the same main any Cloud right so it will
+
+let it be AWS easy to instance sagemaker
+
+Google Cloud you know wherever you'll be
+
+able to run it and understand that if
+
+you're collaboratively working in some
+
+kind of projects this ml flow will be
+
+very very handy okay designed to scale
+
+from one usage to large organized
+
+position scale to Big Data and Apache
+
+spark also so a small definition as we
+
+go ahead ml flow is an open source
+
+platform to manage the ml life cycle
+
+including experimentation
+
+reproducibility deployment and a central
+
+model repository this specifically uh
+
+provides you four components okay and
+
+I'll show you everything practically
+
+also okay one is ml flow tracking ml
+
+flow projects ml models model registry
+
+right so all these things are there ml
+
+flow tracking basically means you'll be
+
+able to record all the metrics over
+
+there right let's say with respect to
+
+accuracy with respect to the performance
+
+metrics that you are able to use right
+
+you'll be able to track all those them
+
+you'll be able to convert this project
+
+into an ml flow projects also so that
+
+you'll be able to package it entirely
+
+and probably you can reproduce that same
+
+thing in any kind of environment or in
+
+any other platforms right and finally
+
+you also have this ml flow model you
+
+will be able to deploy machine learning
+
+model in diverse serving environment so
+
+we'll go and see quickly one by one okay
+
+but before that I really want to talk
+
+about the Integrations well or you'll be
+
+able to integrate with you'll be able to
+
+integrate almost with every Library see
+
+tensorflow pytorch Keras this this is
+
+there even Amazon sagemaker Azure
+
+machine learning right Google cloud data
+
+bricks yeah and many many organizations
+
+are currently using this okay so uh let
+
+me go ahead and let me just show you a
+
+specific example before that what I will
+
+do I have created a folder over a mlflow
+
+I will just try to open a vs code and
+
+I'll try to show it completely from
+
+scratch okay
+
+so how you can probably start it okay as
+
+usual the first step what I'm actually
+
+going to do is that I'm going to create
+
+an environment because we need to
+
+install the ml flow itself right so I
+
+will go ahead and create a command
+
+prompt I can also work in Powershell it
+
+is up to you so I will go ahead and
+
+write contact create
+
+minus P my A and B
+
+okay my e and V or V and V whatever
+
+space specific thing you'll be uh
+
+writing right with respect to the
+
+environment you can specifically right
+
+but I'm just trying to create an
+
+environment in my local folder so Corner
+
+create minus P V and V and then I will
+
+basically write Python and I'll use 3.9
+
+okay so I'll go ahead with 3.9 and then
+
+I'll also give a y notation just to make
+
+sure that
+
+you know anytime it asks me any kind of
+
+permission I'm just going to give yes
+
+for that so quickly it is going to
+
+create an environment this is the first
+
+basic step and I hope everybody is
+
+familiar with this how to create an
+
+environment now here you will be able to
+
+see that here I'll be able to get an
+
+environment till then what I will do I
+
+will also go ahead and import uh create
+
+one more file which is called as
+
+requirement.txt
+
+and inside this requirement.txt I am
+
+going to probably give
+
+my library which is called as ml flow
+
+2.5.0 right so recent ml flow that I am
+
+specifically using over here it is
+
+nothing but 2.5.0 right so with respect
+
+to this 2.5.0 whatever new changes are
+
+there that we will be able to use it
+
+okay so quickly let me just open it over
+
+here I will save this file okay
+
+now I've created my environment so I
+
+will go ahead and activate the
+
+environment over here so Honda activate
+
+V and V slash
+
+okay so I'll clear the screen over here
+
+first of all I will go ahead and install
+
+my requirement.txt
+
+install minus r requirement.txt and once
+
+I execute this okay so all the
+
+installation will basically happen over
+
+here and the ml flow will get installed
+
+okay so just let weights wait for some
+
+time and let's see that how the
+
+installation goes ahead and quickly uh
+
+it will do the installation okay so once
+
+this installation is done then we have
+
+basically good to go okay so now what I
+
+can do I can probably create one
+
+um let's say app.py and I can probably
+
+write my code over here okay now for
+
+this to start with you know in ml flow
+
+probably if you go to the documentation
+
+okay I will take one tutorial for this
+
+particular documentation and I will show
+
+you so let's see this I will go and see
+
+one example I think one example is
+
+basically given regarding wine data set
+
+so if that is given we can basically
+
+check it out so what some tutorials are
+
+there and there are lot many things to
+
+discuss over here okay so uh tutorial is
+
+an example train score and server linear
+
+regression model okay so here is my
+
+entire code we will be discussing about
+
+this particular code okay for right now
+
+I will just copy this and paste it over
+
+here okay and this there are a lot of
+
+examples that are given but uh at least
+
+one basic example we'll try to see it
+
+and then we'll see that how we can run
+
+this in the remote server and track each
+
+and everything okay so here I will just
+
+go ahead and copy it and paste it over
+
+here so let me quickly I don't think so
+
+this is still installed this is still
+
+installing and I've copied it over here
+
+and we'll see what all things we can
+
+probably do with respect to this okay
+
+um
+
+sometime it is taking no worries let's
+
+see how much time it will take okay
+
+and now I will just minimize this let
+
+that installation happen okay now this
+
+is just a sample code to make you
+
+understand that how easily you can
+
+probably use ml flow and you can track
+
+each and every details okay you can
+
+basically track each and every details
+
+now you can see the installation is done
+
+okay now let me just go ahead and show
+
+you this particular code the
+
+prerequisite is that if you have
+
+probably trained any machine learning
+
+algorithms I think you'll be able to
+
+understand it nothing new as such only
+
+some parameters that we are going to
+
+write with respect to ml flow okay so
+
+first of all here you will be able to
+
+see I have imported some of the
+
+libraries like pandas numpy SQL not
+
+metrics mean Squad error mean absolute
+
+error this is a linear regression
+
+problem and the data set that we are
+
+specifically taking is something called
+
+as wine quality data set okay so this
+
+wine quality data set is there I hope
+
+everybody is familiar with that also
+
+okay and later on you know I will try to
+
+probably create an end-to-end project
+
+for this okay in the next tutorial and
+
+do the deployment in The Institute
+
+instance also okay I'll show you that
+
+now over here you'll be able to see that
+
+I'm importing ml flow I'm also importing
+
+ML flow.models and in ml flow you also
+
+have a scale on okay and remaining all
+
+you are specifically having trained test
+
+plate and one algorithm that we are
+
+going to apply something called as
+
+elastic net so I'm going to also use
+
+elastic net and then URL parse URL
+
+parses there and we're also using some
+
+logging concept over here so logging
+
+basic logging we have just imported over
+
+here and whenever we are the level of
+
+the logging is just one okay everything
+
+is same guys I don't think so you'll be
+
+able to find out any problems where if
+
+you have probably understood my end to
+
+end Project Playlist if you are not able
+
+to understand this all this code I have
+
+written line by line to make you
+
+understand also now now this is a
+
+function which is called as eval Matrix
+
+here I'm just giving my actual value and
+
+predicted value from the model and it
+
+will basically give me my rmsc Mae and
+
+R2 Square okay
+
+like how we used to do for any linear
+
+regression problem now this is where my
+
+main program will start if underscore
+
+underscore name is equal to underscore
+
+underscore right if if this is my entry
+
+point of my program so I am basically
+
+giving my URL this URL is basically the
+
+wine quality data set URL okay and it is
+
+also present in that ml flow somewhere
+
+it is given in the GitHub itself now
+
+once we read this particular data set
+
+the separator is this semicolon okay
+
+then in the next step what we are doing
+
+we are handling it with the exception if
+
+you are not able to read it then give
+
+some kind of exception unlimited to
+
+download the train and test data suppose
+
+let's say in this URL that dataset is
+
+not present at that time you'll be
+
+getting this okay
+
+ah in The Next Step what we do is that
+
+we split the data into training and test
+
+set let's say 75-25 okay so train test
+
+split we have specifically used I got
+
+train test data this is my extreme this
+
+is my X test this is my y train and this
+
+is my white list okay so if you are
+
+familiar with my tutorials from so many
+
+days I am doing this uh I think this
+
+will be very much simple to understand
+
+then
+
+I'm using two parameters one is Alpha
+
+and one is L1 ratio okay y Alpha and L
+
+one ratio two parameters here we
+
+specifically use elastic in it so if you
+
+know about elastic net if you are
+
+following my tutorials if I go and
+
+search for elastic net scale on right
+
+here you will be able to see inside the
+
+model we specifically use two parameters
+
+one is Alpha and one is L1 ratio so with
+
+this two parameters I will try to play
+
+and perform multiple experiments and
+
+whichever best parameter gives us the
+
+best result I'll select that okay and
+
+we'll be able to see all those
+
+experimentals that that is the main
+
+fundamental importance of ml flow as an
+
+open source platform okay we can
+
+experiment with all these things and we
+
+can probably see in a visualization
+
+diagram I'll also show you that
+
+particular visualization diagram okay
+
+so ah quickly let's go over here and
+
+here you can basically see that
+
+uh Alpha and L1 ratio we are taking this
+
+as a sys dot a r g b a RGB basically
+
+means this is basically my positional
+
+argument okay if I give the first
+
+positional argument it is going to
+
+consider it as Alpha if I give the
+
+second positional argument it is going
+
+to consider as a L1 ratio okay so that
+
+is what we are reading from here and we
+
+are also saying if this entire length of
+
+RGB is greater than 1 right if it is
+
+greater than 1 then what we are going to
+
+consider Alpha will be this first one
+
+else it will be 0.5 by default okay
+
+then similarly if this length is greater
+
+than one or greater than 2 right at that
+
+time you are going to take the second
+
+element as L one ratio otherwise we are
+
+going to keep it as 0.5 by default the
+
+0.5 values there now here we will be
+
+able to see that with ML flow star dot
+
+start run this is how you probably start
+
+every experiment in ml flow ml flow dot
+
+starter okay
+
+now here you will be able to see I have
+
+LR elastic net okay Alpha is equal to
+
+Alpha L1 ratio L1 ratio random State and
+
+then we do the fit on train and test we
+
+do the prediction on test and finally by
+
+using the evaluation Matrix I am getting
+
+rmsc M A and R2 Square okay now this is
+
+5. from here I will be getting rmscra ma
+
+R2 score now my main purpose of using ml
+
+flow is that I really want to track all
+
+this information so for tracking all
+
+this information this is normal print
+
+statement that you will be able to see
+
+but for tracking information if you are
+
+tracking parameters so I can use log
+
+param function inside ml flow so ml flow
+
+DOT log param if I specifically use we
+
+can track with this variable name so
+
+whatever values you want so I know there
+
+are two parameters so I will be tracking
+
+two params one is uh Alpha and one is
+
+alone ratio then I am going to use
+
+multiple metrics so here for Matrix you
+
+have log underscore metric right I will
+
+tell you why we are specifically
+
+tracking all these things because it
+
+will be important as soon as we track
+
+all these things right in the dashboard
+
+also you'll be able to see all the
+
+struct results so in the log metric
+
+you'll be able to see rmscr2me right and
+
+finally you'll be able to see the
+
+predictions and I will talk about the
+
+signatures okay why we specifically use
+
+this signature right now right now just
+
+keep it as like that okay I will talk
+
+about about this entire signature and
+
+here you also get to add some remote
+
+server tracking URI right now in ml flow
+
+we don't have any tracking URI by
+
+default okay whatever local you have the
+
+tracking URI that only will come okay so
+
+right now if we probably go ahead and
+
+write get under mlflow.get underscore
+
+tracking underscore UI this will be
+
+completely empty because we are going to
+
+run this in our local if I am going to
+
+use the remote right in this video I'll
+
+be showing you right we will probably do
+
+this entirely in the remote okay now you
+
+now see this okay so if this tracking
+
+underscore URL underscore store is not
+
+equal to file then what we are going to
+
+do we are going to log this model log
+
+basically means we are going to select
+
+our best model and that model will
+
+basically be written with the name of
+
+elasticnet wine model okay
+
+and here is my model name LR okay so
+
+model model see if this LR is nothing
+
+but this is specifically my model right
+
+and here you'll be able to see this
+
+specific model here you will be able to
+
+see register model name right everything
+
+as such okay so this is one condition
+
+model registry does not work with file
+
+store okay
+
+register no model the other ways to
+
+register models registry which depends
+
+on the use case please refer to the
+
+specific documents okay I will show you
+
+how you can probably register it as we
+
+go ahead okay but right now we are just
+
+trying to log this specific model as we
+
+see okay so my model will also get
+
+created with this name right model okay
+
+ah now let me do one thing let me
+
+quickly run this and here you will be
+
+able to see a lot of things now okay so
+
+this is my terminal
+
+now obviously my file name is
+
+python
+
+app.py
+
+okay so once I execute this you will be
+
+able to see now
+
+over here one folder of experiments will
+
+get created now see everything has one
+
+run fine right I'm able to see my rmsc m
+
+a R2 okay now as soon as I run this here
+
+you will be able to see I get a folder
+
+called as ml runs now inside this all my
+
+experiments will be tracked right so if
+
+I probably open this first one right so
+
+this is my artifact it is getting
+
+created right now in this artifact you
+
+will be able to see I get my conda ml
+
+condom ml basically means these are the
+
+basic information about my entire ml4
+
+project right so here I've used Cloud
+
+pickle numpy this ml Flow by default
+
+uses all these things internally right
+
+this is my ml model this is my model dot
+
+pickle file so in ml model this is my
+
+entire details of the model file my
+
+entire detail of the ml flow project
+
+right so if you probably remember inside
+
+this right we were seeing this something
+
+called as
+
+ml flow project package data science
+
+code into format to reproduce and run on
+
+any platform right so this is my entire
+
+uh ml4 project you can see the entire
+
+package the package right inside this
+
+file right ml ml model so here you'll be
+
+able to see this right
+
+which all files are there what all
+
+inputs are there everything is written
+
+away so nicely right and here you can
+
+see model path
+
+predict functionality right ml flow SK
+
+learn loader automatically everything is
+
+there and probably if you specifically
+
+use all these files
+
+we will be able to load it in any
+
+environment we just need to have this
+
+specific file okay there are lot many
+
+things that we need to discuss about ml
+
+flow guys right now I'm just giving an
+
+idea about it how things are going ahead
+
+right and then you also have this python
+
+envl so basic dependencies you can also
+
+see requirement.txt all this information
+
+is basically tracked in a better way
+
+metrics if you see maze over here Mae
+
+values over here R2 score uh rmse all
+
+these values are basically getting
+
+tracked right params Alpha value how
+
+much 0.5 by default right L1 ratio how
+
+much by default yeah so here you will be
+
+able to see right all these things are
+
+there right now this was with respect to
+
+the local because see I'm running my
+
+entire experimentation in the local
+
+right now in order to see this if I go
+
+ahead and write ml flow UI okay now see
+
+this as soon as I write ml flow UI
+
+in this URL you will be able to see this
+
+entire tracked experiment going up right
+
+so let me just go ahead and show you so
+
+this is my entire ml flow see in the
+
+same URL it is probably taking that
+
+entire experiment an entire experiment
+
+is getting tracked over here right so if
+
+I probably go ahead and see this okay so
+
+here you will be able to see this entire
+
+information is coming see now this has a
+
+package will be can be used anywhere
+
+right here is your entire artifact condo
+
+ml model dot pickle and all right how
+
+many metrics you are specifically used
+
+Mae 0.627 r 2.109
+
+rmac 0.793 everything is here
+
+parameters Alpha L1 ratio data set I
+
+have not saved a data set no description
+
+is given you can give the description
+
+right and this is the unique ID for the
+
+entire experiment
+
+right so this is quite amazing
+
+right so this is so so nice you can see
+
+the entire information over here right
+
+so this is so fabulously you will be
+
+able to track it now any number of times
+
+that you execute see if I go ahead and
+
+probably execute this entire thing will
+
+get tracked so if I do Ctrl C and let me
+
+go ahead and write again python app.py
+
+now I will try to give some parameters
+
+let's say the first parameter is 0.3 and
+
+the last parameter is 0.7 okay we have
+
+to give two parameter one is for the L1
+
+ratio and one is for the if you see over
+
+here
+
+um
+
+in the arguments code was there right so
+
+let me just show you where is that
+
+parameter so here you will be able to
+
+see Alpha and L1 ratio now I have given
+
+Alpha as 0.3 and L one ratio is 0.7 now
+
+if I execute it again all this ml flow
+
+tracking will happen now I am getting
+
+rmsc is this value right me this value
+
+so if I probably go and then ml runs and
+
+see inside this filter this is my second
+
+experiment right this is my second
+
+experiment now if I go ahead and execute
+
+ml flow
+
+if I go ahead and execute this see this
+
+now if I go ahead and execute ml flow
+
+UI
+
+and see this okay
+
+see this now if I go ahead and execute
+
+this and execute it again right all
+
+those experiments will be loaded now
+
+which is the recent one the second
+
+experiment is this now in this how you
+
+will be able to manage collaboratively
+
+let's say there is another developer who
+
+is also trying to work in the same
+
+project and he also wants to probably
+
+give his experiment and his trial to you
+
+right so you will probably set a remote
+
+server I'll show you how you can set a
+
+remote server in this video I'll talk
+
+about dags up right but the main thing
+
+is that how you'll be able to compare
+
+them now what I'll do in order to
+
+compare them let's say that this two
+
+experiments are from different different
+
+developer so I will do I will select all
+
+this I will just click on compare now
+
+see based on Alpha One Alpha and L one
+
+ratio you will be able to see when my
+
+Alpha was 0.30 when my L1 ratio was 0.3
+
+0.70 my n a is reducing 0.610 which is
+
+very good right so if you ask me whether
+
+from this experiment should I select
+
+where my Alpha was 0.5 or 0.5 or like my
+
+Alpha was 0.5 and L1 ratio was 0.5 or
+
+should I go ahead and select my Alpha as
+
+0.3 or L1 ratios 0.7 over here obviously
+
+my ma is reducing when I am selecting
+
+0.3 and 0.7 so obviously I get a
+
+conclusion saying that okay this work
+
+this is what my hyper parameter should
+
+be and this value should be right and
+
+this is how I'm able to see it I'm able
+
+to see the check out the difference with
+
+respect to R2 score and all so here also
+
+you can see R2 score is getting reduced
+
+over here you will be able to see R2
+
+score is here rmsc was also less when
+
+compared to this right so you are able
+
+to verify each and every parameter over
+
+here right and that is the specific
+
+power over here right now what I will do
+
+is that see this okay
+
+I will go ahead and create another
+
+command prompt
+
+okay let me go ahead and create my third
+
+experiment
+
+okay python
+
+app.py
+
+now if I do python app.py
+
+yeah so here you will be able to see
+
+this python app.py now over here
+
+the experimentation with respect to this
+
+right
+
+see if I go ahead and go ahead and see
+
+experiment now I've got three three
+
+experiments that are there I will select
+
+all those things right and I'll try to
+
+compare it now all the comparison will
+
+again be shown right
+
+again it was with 0.5 so what I'm going
+
+to do I'll just change it okay to some
+
+other value let's see
+
+okay I don't want to use 0.5 so let's
+
+say 0.6
+
+point
+
+6 okay let us say I am going to use
+
+0.6.6 okay so here is basically getting
+
+executed
+
+okay
+
+and here you will be able to see that
+
+I am able to see all these things
+
+and if I compare it you'll be able to
+
+see that all the experiments are there
+
+now here you can make a still a
+
+conclusion again I can see 0.3 and 0.7
+
+where L1 ratio is 0.7 the ma is less for
+
+this right so I may again go even go
+
+ahead and use this now multiple people
+
+multiple developers can collaborate in
+
+the specific project perform their own
+
+experiment and send that experiment to
+
+you right now you're doing it in your
+
+local server I get it but later on this
+
+entire experimentation will happen in a
+
+remote server right and that specific
+
+remote server will send all this
+
+information over there now how to do
+
+that okay that is what now I am going to
+
+discuss but I hope you got an idea the
+
+power of ml flow it is an open source
+
+platform it is allowing you to do so
+
+many different things and the main thing
+
+is this one if you probably want to
+
+check out scatter plot you want to see
+
+box plot everything is basically
+
+available counter plot right this is so
+
+good right and this is entirely open
+
+source now what I will do I will set up
+
+a I'll go ahead and write dags up okay
+
+dags up so I don't know whether you have
+
+heard of dags or not but this is an open
+
+source data science collaboration
+
+platform now since ml flow is completely
+
+an open source and you know that over
+
+here what you will be able to do you'll
+
+be able to track multiple experiments
+
+what I will do instead of running in my
+
+local right I will give the URL of dags
+
+Hub and I'll run it over there okay and
+
+before running it what you have to do
+
+I'm first of all PSI naught okay go
+
+ahead and sign in okay so let's go ahead
+
+and login inside the login what you can
+
+basically do is that you can sign it
+
+with GitHub so guys once I sign in I
+
+have already tried some repositories
+
+okay you can also try it out but I'll
+
+show you from scratch how you can
+
+probably do it okay now uh the first
+
+thing that we are going to do is that
+
+whatever code that I have written right
+
+will try to commit it so I'll go ahead
+
+with github.com okay and probably create
+
+my repository so let me go ahead and
+
+create my new repository over here and
+
+let's say that this repository I'm going
+
+to basically say ml flow ml flow
+
+experiments okay
+
+so this is my repository I'll not select
+
+anything as such get ignore or license
+
+uh I'll just go ahead and create a
+
+repository okay
+
+and done quickly let's go ahead and do
+
+this uh I will just go ahead and
+
+initialize my get in it
+
+okay so I will clear the screen over
+
+here
+
+let's go and do get in it but before
+
+that let me do one thing let me quickly
+
+create a get ignore file also okay so
+
+get in it I will initialize the get
+
+repository over here okay
+
+so now you'll be able to see all the
+
+tracking is basically happening okay I
+
+will delete this ml run folder right now
+
+I don't require it okay
+
+okay and let me do one thing let me
+
+quickly
+
+Rebellion File Explorer
+
+let me delete this get right now okay
+
+and quickly I'm just deleting it so that
+
+I again start this specific process
+
+again okay
+
+so V and V this is my environment this
+
+is my app.py this is my requirement.txt
+
+okay perfect so uh quickly what I will
+
+do I will also create a git ignore file
+
+now for that I will just go to one of my
+
+experiments one of my code that I have
+
+probably worked in okay recently because
+
+there I had created a git ignore file
+
+I'm just lazy I don't want to probably
+
+do quickly all the things okay so over
+
+here I guess I've created it I guess
+
+let's see okay get ignore is over here
+
+okay so I will just copy this and
+
+quickly make a one more file which is
+
+called as Dot get ignored okay
+
+and I will paste this over here okay the
+
+reason why I'm writing this so I am
+
+creating this I don't want to probably
+
+go ahead with this V and V environment
+
+okay I don't want to check in that
+
+specific environment so now I have this
+
+VNV environment over here now quickly
+
+let's to go ahead and do get in it okay
+
+so now I'll do get in it okay uh I will
+
+write git add Dot
+
+to probably add all the files I will see
+
+get status so these are all my files
+
+along with Git ignore
+
+one more readme file let me add it up so
+
+that I will be able to see my readme
+
+file
+
+readme.md okay again git add Dot
+
+okay
+
+CLS get
+
+add dot uh get app.y okay now if I
+
+probably see get status
+
+I have all the files over here now
+
+quickly I will follow the steps okay one
+
+is
+
+git commit okay so this is my first step
+
+get commit first commit and then I will
+
+go and rename my Branch to Main
+
+I've renamed my Branch to main then I
+
+will go ahead and write git remote this
+
+specific remote okay
+
+remote is also added and then finally I
+
+will push this origin from origin from
+
+Main to The Origin okay
+
+so quickly I've I've taught you this all
+
+things and all so please if you uh have
+
+not learned it just have a look okay now
+
+I'll remove reload this page all the
+
+pushes basically been done okay
+
+so uh this is there I can quickly also
+
+add a
+
+ml flow experiments like this commit
+
+changes okay
+
+the error committing file could not be
+
+edited okay it's fine
+
+okay
+
+done ml flow experiments great so this
+
+is there what I can do is that I can
+
+also read me in the readme only I can
+
+basically write ml float experiments
+
+okay
+
+I'll tell you why I'm putting in the
+
+GitHub okay
+
+there is a reason why I am doing this
+
+you will be able to understand so git
+
+commit minus M second commit
+
+I'm just writing some commit statements
+
+over here get get get get get okay
+
+and then changes get push origin to main
+
+okay
+
+so once this push happens I will just
+
+reload this page and everything is fine
+
+now here I will be able to see that okay
+
+fine this is there okay now the next
+
+thing that I am going to do is that I'm
+
+going to probably go to my uh dags Hub
+
+account okay
+
+so where was my tax Hub account let's
+
+see here is my dashboard of a dagger now
+
+how can I integrate this get over here
+
+and do this entire experimentation over
+
+here right example dot py that file is
+
+also there so I will go ahead and create
+
+a new Repository
+
+and here I will say connect a repository
+
+so once I do a character repository I
+
+will go ahead and connect with GitHub
+
+so you can also connect with gitlab
+
+bitbucket if you have but uh since this
+
+is an open source platform I will go
+
+ahead and do ahead with GitHub let's see
+
+why I'm getting this error again and
+
+again
+
+I think there is some you know
+
+integration error I guess I think I
+
+signed it with GitHub but again it is
+
+not able to connect to the repository
+
+now it will be able to connect it let's
+
+see
+
+so connector repo I don't think so yes
+
+now it is being able to do it I will go
+
+ahead and select Krishna x06 uh use
+
+GitHub mobile so that I do the
+
+authentication that is specifically
+
+required
+
+now let's see this
+
+uh sudo mode request I'm getting it I'm
+
+basically getting an authentication over
+
+here so I'll go ahead and write 37 I'm
+
+going to prove it okay
+
+so now once I approve this you will be
+
+able to see that I'll be having this
+
+access
+
+I will go and select that specific
+
+repository only okay what should
+
+repository was that if you probably see
+
+ml flow experiments repository okay so
+
+here I will go ahead and select ml flow
+
+ml flow experiments repository okay I
+
+will remove this which I was trying
+
+earlier so ml flow is there okay
+
+ah
+
+then I will go ahead and click on Save
+
+now once I do the save you will be
+
+seeing how you are being redirected to
+
+the authorized application
+
+now here you will be able to see this is
+
+my repository okay I will connect this
+
+specific repository over here and click
+
+on connect so once I do this this I am
+
+doing it in dags Hub so that that entire
+
+ml flow UI I'll be able to do it in the
+
+remote Hub in the in this remote
+
+repository itself right now
+
+here you have lot of options you will
+
+also be able to configure your data
+
+stores by dags up client DVC storage AWS
+
+S3 Google Cloud Storage all these
+
+options are there now as soon you do all
+
+these things right there will be a
+
+remote option over here and just go
+
+ahead and click on experiments now
+
+inside this experiments you will find
+
+this important thing okay all this ml
+
+flow tracking URL and all you'll be able
+
+to find it so I will copy this and
+
+quickly open my readme file
+
+and put everything over here right so
+
+this is my entire detail see the ml flow
+
+tracking URL is this one uh the username
+
+is this one and the password is this one
+
+okay so probably if I share this
+
+information to you also so when you
+
+practice all these things you will be
+
+able to uh you know execute the code
+
+over here and send all your experiments
+
+to the dags Hub remote server okay
+
+so why I'm writing all these things
+
+because this will be specifically used
+
+now what we need to do go ahead and open
+
+git bash okay
+
+now first thing go ahead and open git
+
+bash now get bash the reason why I'm
+
+opening it I'll tell you okay
+
+first of all we need to expl export all
+
+these things so go ahead and Export
+
+first of all I need to exploit ml flow
+
+tracking with this URL okay so this will
+
+all be my environment variable so first
+
+environment variable that I'm exporting
+
+is ml flow tracking Ori okay so I'll
+
+execute this so this has got exported
+
+then I'm going to export my username
+
+okay so go ahead and Export over here
+
+this entire username okay and the third
+
+thing that you need to export is the
+
+specific password okay ml flow tracking
+
+password so all this information will be
+
+required the reason why I'm telling you
+
+it will be required because this all URL
+
+will be required when I'm writing in my
+
+app.py also okay so all this is exported
+
+right now okay and by for exporting you
+
+can use git bash now in my app.py okay
+
+where I had written this specific code
+
+on top of it one more code I will
+
+specifically write where I'll be giving
+
+my my ml flow tracking URI now what will
+
+be that specific code let let's have a
+
+look and I'll copy and paste it over
+
+here so guys to add the tracking URI
+
+just see I will just try to add two
+
+lines of code okay and remember I will
+
+just try it over here
+
+for remote server okay and the remote
+
+server can also be AWS ec2 instance okay
+
+so right now I'm just going to use this
+
+tags hub
+
+okay and just let me go ahead and write
+
+remote
+
+server URI is equal to so whatever is My
+
+URL I will use this specific URL over
+
+here okay so all the tracking will now
+
+happen over here that basically once I
+
+execute right that folders ml runs
+
+folder will get created over there
+
+itself in that same server okay so
+
+quickly I've done this and then what I
+
+will do I will say ml flow dot set
+
+tracking set tracking URI okay so there
+
+is an option called a set tracking URI
+
+and I will give specifically this remote
+
+server URI Dot
+
+so guys after uh we have exported the
+
+entire tracking URI and along with that
+
+I've also updated the remote server URL
+
+now all we have to do is that from the
+
+git bash only what you do is that write
+
+Python and just try to run this okay
+
+python app Dot py and here you can
+
+basically see right now I don't have any
+
+ml runs folder now the ml run folder
+
+that will probably get created it will
+
+directly get created in the dags Hub URL
+
+right which is my remote server URL so
+
+once I execute this here you will be
+
+able to see that quickly this execution
+
+will happen now so elastic net
+
+everything is happening let's see
+
+whether the ml runs folder is created no
+
+it is not getting created now it will
+
+export all the all the Uris that I have
+
+actually basically create used over here
+
+and now here you can see that
+
+successfully registered model elasticnet
+
+model ml flow and then it is also
+
+created the version 1 of elasticnet
+
+model now I'll go to my dags Hub okay so
+
+quickly
+
+so
+
+so now I will
+
+so now I go to my dags Hub and here you
+
+will be able to see now once I probably
+
+go inside my experiments okay
+
+okay so the in my experiments you will
+
+be this page is getting loaded now
+
+you'll be able to see it let's see now
+
+here you can see yes the experiment is
+
+coming up right now if I probably click
+
+and write on this you'll be able to see
+
+all this information right the Mae R2
+
+rmsc and all uh if I go back to my
+
+mlflow experiments also there will be an
+
+option in remote which is called as go
+
+to ml flow UI so if I probably go ahead
+
+and click on this
+
+you will be again able to see that ml
+
+flow which was running in my local
+
+server right similarly you will be able
+
+to see in this remote server
+
+right let's say that I probably try to
+
+run it okay once more okay so here what
+
+I will do I will just go ahead and clear
+
+my screen and now let me go ahead and
+
+run it by giving some parameters like
+
+0.6 or I will give 0.3 and 0.7 right I
+
+will play with it so what will happen
+
+again it will get executed and it'll
+
+create another experiment so I'll go
+
+ahead and execute this now
+
+and here you will be able to see that
+
+okay all the information is getting
+
+loaded so here the alpha value is 0.30
+
+and L1 is 0.7 I have given my custom
+
+parameters now this is basically created
+
+the version 2 of model which elastic net
+
+model right so now if I probably see
+
+this here you can see one more refresh
+
+one one one more experiment is updated
+
+so if I refresh it so another experiment
+
+will come over here now again if I
+
+probably go ahead and click this and
+
+compare it you will be able to do all
+
+those activities which I had actually
+
+shown you uh specifically in my local
+
+right now here also you can see with
+
+respect to all this combination my ma is
+
+very less now the best thing about is
+
+this now I can work collaboratively in a
+
+team now I can say that please everyone
+
+perform different different experiment
+
+and in the same URL you go ahead and
+
+probably push that Expressway experiment
+
+right and uh obviously I will just give
+
+all this information that I have
+
+actually stored in the ml flow tracking
+
+URI and all right with this specific
+
+code so whatever plan whatever tracking
+
+whatever hyper parameter tuning you have
+
+to do you can probably do it by
+
+exporting the specific variable I'm
+
+probably comparing it over here now not
+
+only this guys they are still more
+
+functionalities that you can probably do
+
+in this I will show you one very amazing
+
+thing so if I go to the experiments over
+
+here okay
+
+and here also you'll be able to see
+
+chart view everything is there okay uh
+
+let me just go ahead and click this uh
+
+let's go back to the models okay so here
+
+you'll be able to see the models okay by
+
+default right now the version 2 uh is
+
+their latest version what I can do I can
+
+click on this elastic net okay I can
+
+probably go ahead and set whether you
+
+want this in the stage of production see
+
+if I go back here you'll be able to see
+
+one is staging and one is production
+
+right I can also say that okay which
+
+model is specifically in the staging and
+
+which model is specifically in the
+
+production also since I have multiple
+
+versions so let's say if this is my two
+
+experiments that I've actually done okay
+
+so let me just show you over here I will
+
+probably go and click on this okay and
+
+here you'll be able to see all the
+
+information with respect to the model
+
+and all I will go to the model over here
+
+okay version two if I probably click it
+
+you'll also be able to see the version
+
+one model and right now by default in
+
+staging and I have not kept anything
+
+right so let let's say in version 2 I
+
+want to push this into the production so
+
+I can probably transition this into
+
+production and I can say OK right now
+
+see I can also even track and make sure
+
+that I can probably put which model is
+
+basically there in the production and
+
+all so right now here you'll be able to
+
+see this is in the production now if I
+
+go ahead and click on the model so here
+
+you can see elasticnet model version 2
+
+right so this is also there and this is
+
+basically there in the production
+
+similarly whatever models that we
+
+specifically create I can put that into
+
+staging let's say if there is another
+
+environment like you at I can probably
+
+create one more thing and go ahead with
+
+respect to uart also so in short what
+
+you are trying to do over here is that
+
+you are able to play with all the
+
+experiments and this was so simple just
+
+by using the specific open source you
+
+are able to do everything as such right
+
+so I hope you're able to enjoy this
+
+specific video right now everything I've
+
+done it in a remote server Nine Mile
+
+another video what I will do I will do
+
+the same experiment in some easy to
+
+instance like a aw right and I will also
+
+try to create an end-to-end project by
+
+integrating this ml flow code so that
+
+you'll be also able to track all these
+
+things
+
+so I hope you are able to understand
+
+this video
+
+I'll give you this entire GitHub link
+
+just try it out and just see whether
+
+you're able to do this or not so yes
+
+this was it from my side I hope you like
+
+this particular video I will see you all
+
+in the next video and this was about ml
+
+flow amazing tool all together you can
+
+do a lot of things with respect to ml
+
+flow uh again perform multiple
+
+experiments let's say that I want to
+
+probably go ahead and perform one more
+
+experiment with different parameters
+
+let's say 0.6 and this I will say 0.4
+
+right again different parameters I can
+
+also play with multiple algorithms okay
+
+not only elastic net but just to show
+
+you an example I've used elastic net I'm
+
+probably doing this okay now here you
+
+will be able to see as soon as this gets
+
+executed the elastic net wind net model
+
+is ready now I will be able to see my
+
+version three I will refresh it right
+
+let's compare all these three okay
+
+and here you'll be able to see right so
+
+here 0.4.6 I'm probably getting hardly
+
+point one two as my R2 score right and
+
+again you can play with metrics
+
+different different metrics suppose I
+
+want rmsc I can use this if I want MSC I
+
+can probably use this and probably see
+
+all the Run details if I go and see in
+
+the model now I'll be having my version
+
+three okay uh if I probably rename this
+
+say while executing I can also rename
+
+this right now is elastic elastic wine
+
+model if I probably rename it to some
+
+other model I will also be able to see
+
+the versions okay so here version
+
+details everything will be there you can
+
+also push this into production into
+
+different things as you require right
+
+based on the requirement so I hope you
+
+are able to understand the specific
+
+video I hope you are able to uh get a
+
+crisp knowledge about what all things we
+
+can specifically do now see in this
+
+version 3 what I can do I can push this
+
+into staging let's say version 3 is
+
+basically there okay I'll just show you
+
+okay once more so that you will push
+
+this into staging okay and I will also
+
+show you like how we can probably
+
+retrieve this portal model and probably
+
+read it you know there will be a runs
+
+model that will be there okay it will
+
+try to tag it with a run ID okay that I
+
+will probably show you in the next video
+
+itself now if I probably go in the
+
+resistant model here you can see in
+
+staging I have version 3 in production I
+
+have version two so all these things you
+
+can probably do it so I hope you are
+
+able to understand this particular video
+
+I will see you all in the next video if
+
+you like it please make do make sure
+
+that you subscribe the channel share
+
+with all your friends I'll see you all
+
+in the next video have a great day thank
+
+you take care bye
+
