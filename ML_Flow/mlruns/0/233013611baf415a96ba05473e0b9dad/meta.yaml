@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/ML_DS_DEVOP/ML_Flow/mlruns/0/233013611baf415a96ba05473e0b9dad/artifacts
+end_time: 1719053926807
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 233013611baf415a96ba05473e0b9dad
+run_name: loud-whale-165
+run_uuid: 233013611baf415a96ba05473e0b9dad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719053922422
+status: 3
+tags: []
+user_id: Hafeez

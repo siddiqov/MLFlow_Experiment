@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/ML_DS_DEVOP/ML_Flow/mlruns/0/640b9a0b458a4565a802af797388ca0a/artifacts
+end_time: 1719053451091
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 640b9a0b458a4565a802af797388ca0a
+run_name: bald-eel-977
+run_uuid: 640b9a0b458a4565a802af797388ca0a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719053446691
+status: 3
+tags: []
+user_id: Hafeez
